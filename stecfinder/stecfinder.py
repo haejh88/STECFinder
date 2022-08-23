@@ -297,7 +297,7 @@ def type_combinations(matches,hmatches):
         *2a 2c           2acd full               2ac full            2a half
         *2a 2d           2acd full               2ac half            2a half         2ad half/full
         *2c 2d           2acd full               2ac half            2ad half
-        2l and 2a     2acd full               2l half
+        2l and 2a     2acd full               2l full
         other 2a        other specific half     2acd half           2a half         2ac half (possible 2ad half)
         other 2c        other specific half     2acd half           2ac half
         other 2d        other specific half     2acd half           2ad half
@@ -331,6 +331,8 @@ def type_combinations(matches,hmatches):
             outhits.append("stx2c")
         elif "stx2ad" in matches or "stx2ad" in matches:
             outhits.append("stx2d")
+        elif "stx2l" in hmatches or "stx2l" in matches:
+            outhits.append("stx2l")
         for x in hmatches:
             if x not in ["stx2acd", "stx2a", "stx2ac", "stx2ad"]:
                 outhits.append(x)
