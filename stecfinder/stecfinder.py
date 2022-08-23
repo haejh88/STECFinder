@@ -307,7 +307,9 @@ def type_combinations(matches,hmatches):
 
     outhits = []
     if "stx2acd" in matches:
-        if "stx2a" in matches:
+        if "stx2l" in matches:
+            outhits.append("stx2l")
+        elif "stx2a" in matches:
             outhits.append("stx2a")
         elif "stx2a" in hmatches:
             outhits.append("stx2a")
@@ -322,14 +324,6 @@ def type_combinations(matches,hmatches):
         elif "stx2ac" in hmatches and "stx2ad" in hmatches:
             outhits.append("stx2c")
             outhits.append("stx2d")
-        elif "stx2l" in hmatches:
-            outhits.append("stx2l")
-            if "stx2a" in matches or "stx2a" in hmatches:
-                outhits.append("stx2a")
-            elif "stx2ac" in hmatches:
-                outhits.append("stx2c")
-            elif "stx2ad" in matches:
-                outhits.append("stx2d")
     elif "stx2acd" in hmatches:
         if "stx2a" in hmatches or "stx2a" in matches:
             outhits.append("stx2a")
